@@ -1,0 +1,181 @@
+/* ================================================================
+   Auth.css — Page Inscription / Connexion
+   Fond navy (proche du wireframe), carte sombre centrée à droite
+   ================================================================ */
+
+/* Fond pleine page navy vibrant */
+.auth-page {
+  min-height: 100vh;
+  background: transparent; /* le fond vient de l'image générée appliquée sur <main> */
+  display: flex;
+  align-items: center;
+}
+
+/* Layout 2 colonnes : illustration gauche, carte droite */
+.auth-layout {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 48px;
+  align-items: center;
+  padding-block: 64px;
+}
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+  .auth-illustration {
+    display: none;
+  }
+}
+
+/* ---- Illustration ---- */
+.auth-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-illustration__inner {
+  width: 100%;
+  max-width: 480px;
+}
+
+.auth-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Carte sombre ---- */
+.auth-card {
+  /* card-dark already sets bg #1A1A1A, color white, border-radius 24px, padding 36px */
+  width: 100%;
+  max-width: 480px;
+  justify-self: end;
+}
+
+.auth-card__title {
+  color: #ffffff;
+  margin-bottom: 28px;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+/* ---- Toggle Connexion / Inscription ---- */
+.auth-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  background: #2A2A2A;
+  padding: 6px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+/* Override pill colors inside dark card */
+.auth-card .pill {
+  background: transparent;
+  color: var(--grey);
+  border-color: transparent;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+}
+
+.auth-card .pill:hover {
+  color: var(--white);
+  transform: none;
+}
+
+.auth-card .pill--active {
+  background: var(--sky);
+  color: var(--dark);
+  border-color: transparent;
+}
+
+/* ---- Role toggle (inscription) ---- */
+.auth-role-toggle {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.auth-role-toggle .pill {
+  flex: 1;
+  justify-content: center;
+}
+
+/* ---- Labels & inputs dans la carte ---- */
+.auth-card .field label {
+  color: #cccccc;
+  font-size: 0.88rem;
+}
+
+/* .card-dark .input override already in index.css — complément focus */
+.auth-card .input:focus {
+  border-color: var(--sky);
+}
+
+/* ---- Bouton coral (spécifique auth) ---- */
+.btn--coral {
+  background: var(--coral);
+  color: var(--white);
+}
+
+.btn--coral:hover {
+  background: #ff5533;
+}
+
+/* ---- Erreur serveur ---- */
+.auth-error {
+  background: rgba(255, 71, 87, 0.15);
+  border: 1.5px solid var(--danger);
+  color: #ff8a94;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* ---- Ligne prénom + nom ---- */
+.auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .auth-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Lien switch mode ---- */
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--grey);
+}
+
+.auth-switch__link {
+  background: none;
+  border: none;
+  color: var(--sky);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.auth-switch__link:hover {
+  color: #ffffff;
+}
+
+/* ---- Optionnel label ---- */
+.auth-optional {
+  color: var(--grey);
+  font-weight: 400;
+  font-size: 0.82rem;
+}
