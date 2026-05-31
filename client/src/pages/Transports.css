@@ -1,0 +1,71 @@
+.transports-page { min-height: 100vh; }
+
+/* Carte sombre décalée à droite : la moitié gauche laisse voir le fond généré */
+.transports-layout {
+  display: flex;
+  justify-content: flex-end;
+}
+.transports-card { width: 56%; min-width: 540px; }
+@media (max-width: 900px) {
+  .transports-layout { justify-content: center; }
+  .transports-card { width: 100%; min-width: 0; }
+}
+
+/* Colonne déco */
+.transports-deco {
+  position: sticky; top: 100px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 420px; position: relative;
+}
+.transports-deco__plane { width: 150px; height: 150px; color: var(--dark); transform: rotate(8deg); }
+.transports-deco__stars { position: absolute; inset: 0; }
+.deco-star { position: absolute; font-size: 2.2rem; }
+.deco-star--green  { color: var(--dark);  top: 8%;  left: 12%; }
+.deco-star--orange { color: var(--coral); top: 22%; right: 14%; font-size: 3rem; }
+.deco-star--pink   { color: var(--pink);  bottom: 24%; left: 6%; font-size: 2.6rem; }
+.deco-star--white  { color: var(--white); bottom: 10%; right: 20%; }
+
+/* Carte sombre */
+.transports-card { padding: 40px; }
+.transports-title {
+  color: var(--white);
+  margin-bottom: 24px;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.transports-pills { margin-bottom: 24px; }
+.pill--lime-active { background: var(--lime) !important; color: var(--dark) !important; border-color: var(--lime) !important; }
+.transports-form { margin-top: 8px; }
+
+.transports-error { color: var(--lime); font-weight: 600; }
+.transports-empty { color: #BBB; padding: 24px 0; text-align: center; }
+
+.transports-list { list-style: none; }
+
+.transport-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 0; flex-wrap: wrap;
+}
+.transport-row--complet { opacity: 0.45; }
+.transport-row__info { flex: 1; min-width: 220px; }
+.transport-row__header { display: flex; align-items: center; gap: 10px; }
+.transport-row__compagnie { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+.transport-row__route { font-size: 1rem; color: #DDD; margin-top: 2px; }
+.transport-row__meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.transport-row__horaires { font-size: 0.85rem; color: #AAA; }
+.transport-row__places { font-size: 0.8rem; color: var(--lime); }
+.transport-complet-badge { margin-left: 4px; }
+.transport-duree-pill { color: var(--white) !important; border-color: #444 !important; }
+.transport-row__action { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.transport-row__prix { font-size: 1.6rem; color: var(--lime); }
+
+/* Bannière contexte itinéraire */
+.transports-context { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 12px 16px; margin-bottom: 16px; border-left: 4px solid var(--lime); background: rgba(255,255,255,0.06); border-radius: 0 8px 8px 0; color: #fff; }
+
+/* Tronçons de l'itinéraire */
+.transports-legs { margin-bottom: 20px; }
+.transports-legs__label { display: block; color: #bbb; font-size: 0.85rem; margin-bottom: 8px; }
+.leg-pill--done { opacity: 0.65; }
+.transports-tri-label { color: #bbb; font-size: 0.85rem; align-self: center; }
+.transport-type-pill { color: var(--white) !important; border-color: #444 !important; text-transform: capitalize; }

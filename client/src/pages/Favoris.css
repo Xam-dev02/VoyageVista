@@ -1,0 +1,25 @@
+.favoris-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #FF4D8D 0%, #E03A78 45%, #C42E68 100%);
+}
+.favoris-title { color: var(--white); margin-bottom: 28px; }
+.favoris-empty { padding: 48px; text-align: center; }
+
+.favoris-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.favoris-card { position: relative; border-radius: var(--radius-card); overflow: hidden; background: var(--white); border: 3px solid var(--dark); }
+.favoris-card__link { display: block; color: inherit; text-decoration: none; }
+.favoris-card__img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.favoris-card__img--ph { background: linear-gradient(135deg, var(--light-grey), #ddd); }
+.favoris-card__body { padding: 14px 16px; }
+.favoris-card__nom { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
+.favoris-card__pays { color: var(--grey); font-size: 0.9rem; }
+.favoris-card__remove {
+  position: absolute; top: 12px; right: 12px;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #FF4D8D; color: #fff; border: none; cursor: pointer;
+  font-size: 1.2rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: transform .15s ease;
+}
+.favoris-card__remove:hover { transform: scale(1.12); }

@@ -1,0 +1,11 @@
+# Dependencies
+client/node_modules/
+# Build
+client/dist/
+# Logs
+*.log
+# OS
+.DS_Store
+# Env
+.env
+api/config/local.php

@@ -1,0 +1,79 @@
+.presta-page { min-height: 100vh; }
+
+.presta-title {
+  color: var(--white);
+  margin-bottom: 32px;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+}
+
+.presta-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 860px) { .presta-layout { grid-template-columns: 1fr; } }
+
+/* Sidebar */
+.presta-sidebar {
+  display: flex; flex-direction: column; gap: 6px;
+  background: rgba(0,0,0,0.25);
+  border-radius: var(--radius-card);
+  padding: 16px 12px;
+  position: sticky; top: 100px;
+}
+.presta-tab-pill { justify-content: flex-start !important; width: 100%; text-align: left; color: rgba(255,255,255,0.8) !important; }
+.presta-tab-pill.pill--active { background: var(--dark) !important; color: var(--white) !important; }
+.presta-tab-pill.pill--ghost:hover { background: rgba(255,255,255,0.15) !important; }
+
+/* Stats */
+.presta-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 24px; }
+@media (max-width: 640px) { .presta-stats { grid-template-columns: 1fr; } }
+.presta-stat { border-radius: var(--radius-card); padding: 28px 24px; color: var(--dark); }
+.presta-stat--sky   { background: var(--sky); }
+.presta-stat--gold  { background: var(--gold); }
+.presta-stat--coral { background: var(--coral); color: var(--white); }
+.presta-stat__val { font-family: var(--font-display); font-weight: 700; font-size: 3rem; line-height: 1; }
+.presta-stat__lbl { font-weight: 600; margin-top: 8px; font-size: 0.9rem; }
+
+/* Card sombre */
+.presta-card { padding: 28px; margin-bottom: 20px; }
+.presta-card-title { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; color: var(--white); margin-bottom: 20px; letter-spacing: 0.03em; }
+.presta-empty { color: #999; padding: 16px 0; }
+
+/* Table */
+.presta-table { width: 100%; border-collapse: collapse; }
+.presta-table th { font-family: var(--font-display); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; padding: 8px 12px; text-align: left; border-bottom: 1px solid #2A2A2A; }
+.presta-table td { padding: 12px; border-bottom: 1px solid #2A2A2A; color: var(--white); vertical-align: middle; }
+.presta-table tr:last-child td { border-bottom: none; }
+.presta-name { font-weight: 600; }
+.presta-price { font-weight: 700; font-family: var(--font-display); }
+.presta-actions { display: flex; gap: 6px; }
+
+/* Badges type */
+.presta-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; }
+.presta-badge--sky  { background: var(--sky);  color: var(--dark); }
+.presta-badge--gold { background: var(--gold); color: var(--dark); }
+.presta-badge--lime { background: var(--lime); color: var(--dark); }
+
+/* Bouton supprimer */
+.presta-btn-delete { color: #fff !important; border-color: var(--danger) !important; }
+.presta-btn-delete:hover { background: var(--danger) !important; }
+
+/* Bouton ajouter */
+.presta-add-btn { margin-top: 16px; font-size: 1rem; padding: 14px 28px; }
+
+/* Avis */
+.presta-avis-list { display: flex; flex-direction: column; gap: 16px; }
+.presta-avis-item { background: rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 18px; }
+.presta-avis-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.presta-avis-offre { font-weight: 600; color: var(--white); }
+.presta-avis-date  { color: #888; font-size: 0.85rem; margin-left: auto; }
+.presta-avis-auteur { color: #aaa; font-size: 0.88rem; margin-bottom: 6px; }
+.presta-avis-comment { color: rgba(255,255,255,0.8); font-style: italic; font-size: 0.95rem; }
+
+/* Modales */
+.presta-modal-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.presta-modal { background: var(--white); border-radius: var(--radius-card); padding: 32px; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; }
+.presta-modal--lg { max-width: 600px; }
+.presta-modal-title { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin-bottom: 20px; }
