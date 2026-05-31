@@ -1,0 +1,28 @@
+.notif-page { min-height: 100vh; }
+.notif-count { font-weight: 600; margin-top: 4px; }
+.notif-error { padding: 20px; color: var(--gold); }
+.notif-empty { padding: 40px; text-align: center; }
+
+.notif-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.notif-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; }
+.notif-item--unread { border-left: 8px solid var(--pink); }
+.notif-tag {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: .04em;
+  padding: 6px 12px; border-radius: var(--radius-pill); white-space: nowrap;
+  background: var(--dark); color: #fff;
+}
+.notif-tag--reservation  { background: var(--success); }
+.notif-tag--modification { background: var(--sky); color: var(--dark); }
+.notif-tag--rappel       { background: var(--warning); }
+.notif-tag--promotion    { background: var(--pink); }
+.notif-tag--systeme      { background: var(--light-grey); color: var(--grey); }
+.notif-body { flex: 1; min-width: 0; }
+.notif-titre { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
+.notif-message { margin-top: 2px; }
+.notif-date { font-size: 0.82rem; margin-top: 6px; }
+.notif-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+@media (max-width: 640px) {
+  .notif-item { flex-wrap: wrap; }
+  .notif-actions { flex-direction: row; width: 100%; }
+}
